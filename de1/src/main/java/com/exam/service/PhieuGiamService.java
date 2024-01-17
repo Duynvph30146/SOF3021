@@ -3,6 +3,7 @@ package com.exam.service;
 import com.exam.entity.PhieuGiamGia;
 import com.exam.repo.PhieuGiamGiaRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,7 +13,7 @@ public class PhieuGiamService {
     @Autowired
     PhieuGiamGiaRepo repo;
 
-    public List<PhieuGiamGia> findAll(){
+    public List<PhieuGiamGia> findAll(Sort sortByUsername){
         return repo.findAll();
     }
 

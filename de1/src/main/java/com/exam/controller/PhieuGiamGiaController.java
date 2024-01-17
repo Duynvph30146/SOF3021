@@ -6,6 +6,7 @@ import com.exam.service.KhachHangService;
 import com.exam.service.PhieuGiamService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,13 +27,15 @@ public class PhieuGiamGiaController {
 
     @GetMapping("/phieu-giam-gia/hien-thi")
     public String hienThi(Model model) {
-        model.addAttribute("list", phieuGiamService.findAll());
+        Sort sortByUsername=Sort.by(Sort.Direction.ASC,"maphieu");
+        model.addAttribute("list", this.phieuGiamService.findAll(sortByUsername));
         return "phieu-giam-gia/index";
     }
 
     @GetMapping("abc")
     public ResponseEntity<?> getAll() {
-        return ResponseEntity.ok(phieuGiamService.findAll());//trả ra 1 file json
+        Sort sortByUsername=Sort.by(Sort.Direction.ASC,"maphieu");
+        return ResponseEntity.ok(phieuGiamService.findAll(sortByUsername));//trả ra 1 file json
     }
 
 

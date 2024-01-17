@@ -1,6 +1,7 @@
 package com.exam.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,4 +19,5 @@ public class HelloController {
         System.out.println("Id:" + id);
         System.out.println("ten:" + ten);
     }
+
 }
