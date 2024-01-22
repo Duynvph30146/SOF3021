@@ -20,25 +20,25 @@ public class PhieuGiamGia {
     @Id
     String maphieu;
 
-    @NotBlank(message = "Ten phieu khong duoc trong")
+    @NotBlank(message = "Tên phiếu không được để trống")
     String tenphieu;
 
-    @NotNull(message = "Ngay bat dau khong duoc trong")
+    @NotNull(message = "Ngày bắt đầu không được để trống")
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     Date ngaybatdau;
 
-    @NotNull(message = "Ngay ket thuc khong duoc trong")
+    @NotNull(message = "Ngày kết thúc không được để trống")
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     Date ngayketthuc;
 
-    @NotNull(message = "Giá trị giảm khong duoc trong")
+    @NotNull(message = "Giá trị giảm không được để trống")
     Double giatrigiam;
 
     Boolean trangthai;
 
-    @Valid @NotNull(message = "Khach hang khong duoc trong")
+    @NotNull(message = "Khách hàng không được để trống")
     @ManyToOne
     @JoinColumn(name = "nguoisohuu")
     KhachHang nguoisohuu;

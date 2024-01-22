@@ -3,7 +3,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<h1>FORM ADD PHIẾU GIẢM GIÁ</h1>
+<h1>Form add phiếu giảm giá</h1>
 <form:form method="post" modelAttribute="pgg" action="/phieu-giam-gia/viewAdd">
     <p>Mã phiếu: <form:input path="maphieu"/>
         <form:errors path="maphieu" cssClass="text-danger"/> </p>

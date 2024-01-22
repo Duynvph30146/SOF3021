@@ -15,4 +15,5 @@ public class KhachHang {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long makhachhang;
     String tenkhachhang;
+    String diachi;
 }
