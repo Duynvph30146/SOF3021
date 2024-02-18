@@ -18,6 +18,7 @@ import java.util.Date;
 @Table(name = "phieugiamgia")
 public class PhieuGiamGia {
     @Id
+    @NotBlank(message = "Mã phiếu không được để trống")
     String maphieu;
 
     @NotBlank(message = "Tên phiếu không được để trống")

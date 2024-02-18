@@ -15,19 +15,19 @@
         <th>Địa chỉ</th>
         <th>Action</th>
     </tr>
-    <c:forEach items="${list}" var="pgg">
+    <c:forEach items="${page.content}" var="p">
         <tr>
-            <td>${pgg.maphieu}</td>
-            <td>${pgg.tenphieu}</td>
-            <td>${pgg.ngaybatdau}</td>
-            <td>${pgg.ngayketthuc}</td>
-            <td>${pgg.giatrigiam}</td>
-            <td>${pgg.trangthai?"Còn hiệu lực" : "Kết thúc"}</td>
-            <td>${pgg.nguoisohuu.tenkhachhang}</td>
-            <td>${pgg.nguoisohuu.diachi}</td>
+            <td>${p.maphieu}</td>
+            <td>${p.tenphieu}</td>
+            <td>${p.ngaybatdau}</td>
+            <td>${p.ngayketthuc}</td>
+            <td>${p.giatrigiam}</td>
+            <td>${p.trangthai?"Còn hiệu lực" : "Kết thúc"}</td>
+            <td>${p.nguoisohuu.tenkhachhang}</td>
+            <td>${p.nguoisohuu.diachi}</td>
             <td>
-                <a href="/phieu-giam-gia/update/${pgg.maphieu}" class="btn btn-warning">Update</a>
-                <a href="/phieu-giam-gia/delete/${pgg.maphieu}" class="btn btn-danger"
+                <a href="/phieu-giam-gia/update/${p.maphieu}" class="btn btn-warning">Update</a>
+                <a href="/phieu-giam-gia/delete/${p.maphieu}" class="btn btn-danger"
                    onclick="return confirm('Bạn có muốn xóa?')"
                 >Delete</a>
             </td>
@@ -36,3 +36,18 @@
 </table>
 <br>
 <a href="/phieu-giam-gia/viewAdd"><button class="btn btn-primary">Add</button></a>
+
+<div class="text-center">
+    <a href="/phieu-giam-gia/hien-thi">
+        <button class="btn btn-primary">First</button>
+    </a>
+    <a href="/phieu-giam-gia/hien-thi?p=${page.number-1}">
+        <button class="btn btn-primary">Prev</button>
+    </a>
+    <a href="/phieu-giam-gia/hien-thi?p=${page.number+1}">
+        <button class="btn btn-primary">Next</button>
+    </a>
+    <a href="/phieu-giam-gia/hien-thi?p=${page.totalPages-1}">
+        <button class="btn btn-primary">Last</button>
+    </a>
+</div>

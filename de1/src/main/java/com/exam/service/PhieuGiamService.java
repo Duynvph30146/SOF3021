@@ -25,7 +25,7 @@ public class PhieuGiamService {
         return repo.save(pgg);
     }
 
-    public void deleteById(String id) {
-        repo.deleteById(id);
+    public void deleteById(String maphieu) {
+        repo.deleteById(maphieu);
     }
 }
